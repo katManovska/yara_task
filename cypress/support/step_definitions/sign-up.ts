@@ -29,5 +29,5 @@ When("I click Sign in button", () => {
 });
 
 Then("I am signed up to the application", () => {
-  userSignedInHomePage.userProfileButton(userName)
+  userSignedInHomePage.userProfileButton(userName).should('be.visible')
 });

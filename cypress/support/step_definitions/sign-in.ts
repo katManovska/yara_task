@@ -24,6 +24,6 @@ When("I click on Sign in button", () => {
 
 Then("I am signed in the application", () => {
   cy.fixture("user").then((user) => {
-    userSignedInHomePage.userProfileButton(user.name)
+    userSignedInHomePage.userProfileButton(user.name).should('be.visible')
   });  
 });
