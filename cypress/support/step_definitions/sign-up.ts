@@ -1,7 +1,7 @@
 import { When, Then} from "@badeball/cypress-cucumber-preprocessor";
 import signUpPage from "../pageObjects/sign.up.page";
 import signInPage from "../pageObjects/sign.in.page";
-import userSignedInHomePage from "../pageObjects/user.signed.in.home.page";
+import userSignedInHomePage from "../pageObjects/user.signed.in.header.page";
 import randomUser from "../../utils/randomUser";
 
 const userName = randomUser.randomUsername();
@@ -29,5 +29,5 @@ When("I click Sign in button", () => {
 });
 
 Then("I am signed up to the application", () => {
-  userSignedInHomePage.userProfileButton.contains(userName)
+  userSignedInHomePage.userProfileButton(userName)
 });

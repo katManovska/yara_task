@@ -10,7 +10,7 @@ This is Yara coding Challenge project which is to implement automation for https
 
 ## Installation
 
-1. Clone the git repo -- https://github.com/katManovska/yara_coding_challenge.git.
+1. Clone the git repo `git clone https://github.com/katManovska/yara_task.git`
 2. Run `npm install` in the main folder in order to install the latest versions of the dependencies.
 3. Run `npx cypress open` to open Cypress window.
 4. On Cypress window, select E2E Testing > Click Continue button > Choose browser > Click Start E2E testing button
@@ -28,6 +28,7 @@ cypress/e2e
 │── fixtures
 │── support
 │     └── step_definitions
+└── utils
 config
 ```
 
