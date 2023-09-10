@@ -1,4 +1,4 @@
-# Yara Coding Challenge project
+## Yara Coding Challenge project
 
 This is Yara coding Challenge project which is to implement automation for https://react-redux.realworld.io/#/login?_k=5zi79t
 
@@ -33,6 +33,6 @@ config
 ```
 
 ## ESLINT
-ESLint statically analyzes your code to find problems. In order to run it just execute the following line in the main folder: npx eslint
+ESLint statically analyzes your code to find problems. In order to run it just execute the following line in the main folder: `npm run lint`
 
 Happy testing!

@@ -1,9 +1,9 @@
 class UserSignedInHomePage {
-    userProfileButton(userName): Cypress.Chainable<any> {
+    userProfileButton(userName): Cypress.Chainable<JQuery<HTMLElement>>{
         return cy.get('a[href="#@' + userName + '"]');
     }
 
-    get settingsButton(): Cypress.Chainable<any> {
+    get settingsButton(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.get('a[href="#settings"]');
     }  
 }

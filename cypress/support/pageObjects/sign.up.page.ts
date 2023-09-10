@@ -1,17 +1,17 @@
 class SignUpPage {
-    get userNameField(): Cypress.Chainable<any> {
+    get userNameField(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.get('input[placeholder="Username"]');
     }
 
-    get emailField(): Cypress.Chainable<any> {
+    get emailField(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.get('input[type="email"]');
     }
 
-    get passwordField(): Cypress.Chainable<any> {
+    get passwordField(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.get('input[type="password"]');
     }
 
-    get singInButton(): Cypress.Chainable<any> {
+    get singInButton(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.get('button[type="submit"]');
     }
 }

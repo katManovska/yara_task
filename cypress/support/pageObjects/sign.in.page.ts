@@ -1,21 +1,22 @@
 class SignInPage {
-    get signInField(): Cypress.Chainable<any> {
+
+      get signInField(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.get('input[type="email"]');
     }
 
-    get passwordField(): Cypress.Chainable<any> {
+    get passwordField(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.get('input[type="password"]');
     }
 
-    get singInButton(): Cypress.Chainable<any> {
+    get singInButton(): Cypress.Chainable<JQuery<HTMLElement>>{
         return cy.get('button[type="submit"]');
     }
 
-    get needAnAccountLink(): Cypress.Chainable<any> {
+    get needAnAccountLink(): Cypress.Chainable<JQuery<HTMLElement>>{
         return cy.get('a[href="#register"]').contains('Need an account?');
     }
 
-    get invalidEmailMessage(): Cypress.Chainable<any> {
+    get invalidEmailMessage(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.get('li').contains('email or password is invalid');
     }
 }
