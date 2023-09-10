@@ -14,6 +14,10 @@ class SignInPage {
     get needAnAccountLink(): Cypress.Chainable<any> {
         return cy.get('a[href="#register"]').contains('Need an account?');
     }
+
+    get invalidEmailMessage(): Cypress.Chainable<any> {
+        return cy.get('li').contains('email or password is invalid');
+    }
 }
 
 export default new SignInPage();

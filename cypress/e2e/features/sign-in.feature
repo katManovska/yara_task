@@ -6,3 +6,10 @@ Feature: Sign in
         And I enter valid password in the password field
         And I click on Sign in button
         Then I am signed in the application
+
+    Scenario: Sign in with invalid email
+        Given as a guest user I am on the website
+        When I enter invalid email in the email field
+        And I enter valid password in the password field
+        And I click on Sign in button
+        Then I am not signed in the application

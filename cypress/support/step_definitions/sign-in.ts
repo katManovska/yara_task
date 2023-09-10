@@ -1,6 +1,9 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import signInPage from "../pageObjects/sign.in.page";
 import userSignedInHomePage from "../pageObjects/user.signed.in.header.page";
+import randomUser from "../../utils/randomUser";
+
+const invalidEmail = randomUser.randomEmail() + 'invalid';
 
 Given("as a guest user I am on the website", () => {
   cy.visit("");
@@ -26,4 +29,14 @@ Then("I am signed in the application", () => {
   cy.fixture("user").then((user) => {
     userSignedInHomePage.userProfileButton(user.name).should('be.visible')
   });  
+});
+
+When("I enter invalid email in the email field", () => {
+  signInPage.signInField.type(invalidEmail)
+});
+
+Then("I am not signed in the application", () => {
+   signInPage.singInButton.should('be.visible')
+   signInPage.invalidEmailMessage.should('be.visible')
+
 });
