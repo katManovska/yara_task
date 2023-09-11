@@ -31,7 +31,7 @@ When("I click Update Settings button", () => {
     settingsPage.updateSettingsButton.click()
 });
 
-Then("I see the new settings are dispslayed", () => {
+Then("I see the new settings are displayed", () => {
     settingsPage.profilePicUrlField.type(urlPicText).should('be.visible')
     settingsPage.shortBioField.type(bioFieldText).should('be.visible')
 });
