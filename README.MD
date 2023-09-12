@@ -15,10 +15,6 @@ This is Yara coding Challenge project which is to implement automation for https
 3. Run `npx cypress open` to open Cypress window.
 4. On Cypress window, select E2E Testing > Click Continue button > Choose browser > Click Start E2E testing button
 
-## What to do if cypress is not starting??
-
-1. Try to run as additional step in the terminal `@badeball/cypress-cucumber-preprocessor/` and than start the project again with `npx cypress open`
-
 ## Project structure
 
 ```
