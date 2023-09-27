@@ -51,6 +51,6 @@ export default defineConfig({
     baseUrl: "https://react-redux.realworld.io/#/login?_k=5zi79t",
     specPattern: "**/*.feature",
     setupNodeEvents,
-    supportFile: false
+    supportFile: 'cypress/support/commands.ts'
   },
 });

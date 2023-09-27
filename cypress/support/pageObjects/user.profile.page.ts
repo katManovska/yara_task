@@ -1,6 +1,6 @@
 class UserProfilePage {
-    get userName(): Cypress.Chainable<JQuery<HTMLElement>>{
-        return cy.get('h4');
+    get userName() {
+        return cy.dataCy('h4');
     }
 }
 

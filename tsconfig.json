@@ -1,1 +1,19 @@
-{}
+{
+    "compilerOptions": {
+        "skipLibCheck": true,
+        "outDir": "./dist/",
+        "target": "es5",
+        "lib": [
+            "esnext",
+            "dom"
+        ],
+        "types": [
+            "cypress",
+            "node"
+        ],
+        "moduleResolution": "node",
+    },
+    "include": [
+        "./**/*.ts", "cypress.config.ts",
+    ],
+}

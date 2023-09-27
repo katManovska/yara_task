@@ -1,14 +1,14 @@
 class SettingsPage {
-    get profilePicUrlField(): Cypress.Chainable<JQuery<HTMLElement>> {
-        return cy.get('input[placeholder="URL of profile picture"]');
+    get profilePicUrlField() {
+        return cy.dataCy('input[placeholder="URL of profile picture"]');
     }
 
-    get shortBioField(): Cypress.Chainable<JQuery<HTMLElement>> {
-        return cy.get('textarea[placeholder="Short bio about you"]');
+    get shortBioField() {
+        return cy.dataCy('textarea[placeholder="Short bio about you"]');
     }
 
-    get updateSettingsButton(): Cypress.Chainable<JQuery<HTMLElement>> {
-        return cy.get('button[type="submit"]').contains('Update Settings');
+    get updateSettingsButton() {
+        return cy.dataCy('button[type="submit"]').contains('Update Settings');
     }
 }
 

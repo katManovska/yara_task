@@ -11,7 +11,7 @@ Given("as a guest user I am on the website", () => {
 
 When("I enter existing email in the email field", () => {
   cy.fixture("user").then((user) => {
-    signInPage.signInField.type(user.email)
+    signInPage.signInFieldType(user.email)
   });
 });
 
@@ -32,7 +32,7 @@ Then("I am signed in the application", () => {
 });
 
 When("I enter invalid email in the email field", () => {
-  signInPage.signInField.type(invalidEmail)
+  signInPage.signInFieldType(invalidEmail)
 });
 
 Then("I am not signed in the application", () => {

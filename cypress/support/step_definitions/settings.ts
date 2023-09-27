@@ -9,7 +9,7 @@ const bioFieldText = randomUser.randomText();
 
 When("I login", () => {
     cy.fixture("user").then((user) => {
-        signInPage.signInField.type(user.email)
+        signInPage.signInFieldType(user.email)
         signInPage.passwordField.type(user.password)
       });
     signInPage.singInButton.click();
