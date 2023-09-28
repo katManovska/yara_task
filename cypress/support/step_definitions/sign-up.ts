@@ -13,19 +13,19 @@ When("I click Need an account link", () => {
 });
 
 When("I enter username in the Username field", () => {
-  signUpPage.userNameField.type(userName);
+  signUpPage.userNameFieldType(userName);
 });
 
 When("I enter non-registered email in the email field", () => {
-  signUpPage.emailField.type(userEmail);
+  signUpPage.emailFieldType(userEmail);
 });
 
 When("I enter password in the password field", () => {
-  signUpPage.passwordField.type(password);
+  signUpPage.passwordFieldType(password);
 });
 
 When("I click Sign in button", () => {
-  signUpPage.singInButton.click();
+  signUpPage.singInButtonClick();
 });
 
 Then("I am signed up to the application", () => {

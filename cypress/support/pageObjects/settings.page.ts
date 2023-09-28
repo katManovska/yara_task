@@ -1,14 +1,30 @@
+export const selectors = {
+    profilePicUrlField: 'input[placeholder="URL of profile picture"]',
+    shortBioField: 'textarea[placeholder="Short bio about you"]',
+    updateSettingsButton: 'button[type="submit"]',
+    updateSettingsText: 'Update Settings'
+};
+
 class SettingsPage {
+
     get profilePicUrlField() {
-        return cy.dataCy('input[placeholder="URL of profile picture"]');
+        return cy.dataCy(selectors.profilePicUrlField);
     }
 
     get shortBioField() {
-        return cy.dataCy('textarea[placeholder="Short bio about you"]');
+        return cy.dataCy(selectors.shortBioField);
     }
 
-    get updateSettingsButton() {
-        return cy.dataCy('button[type="submit"]').contains('Update Settings');
+    profilePicUrlFieldType(urlPicText: string) {
+        return cy.dataCy(selectors.profilePicUrlField).clear() .type(urlPicText);
+    }
+
+    shortBioFieldType(bioFieldText: string) {
+        return cy.dataCy(selectors.shortBioField).clear().type(bioFieldText);
+    }
+
+    updateSettingsButtonClick() {
+        return cy.dataCy(selectors.updateSettingsButton).contains(selectors.updateSettingsText).click();
     }
 }
 

@@ -17,12 +17,12 @@ When("I enter existing email in the email field", () => {
 
 When("I enter valid password in the password field", () => {
   cy.fixture("user").then((user) => {
-    signInPage.passwordField.type(user.password)
+    signInPage.passwordFieldType(user.password);
   });
 });
 
 When("I click on Sign in button", () => {
-  signInPage.singInButton.click();
+  signInPage.singInButtonClick();
 });
 
 Then("I am signed in the application", () => {
@@ -36,7 +36,7 @@ When("I enter invalid email in the email field", () => {
 });
 
 Then("I am not signed in the application", () => {
-   signInPage.singInButton.should('be.visible')
+   signInPage.signInButton.should('be.visible')
    signInPage.invalidEmailMessage.should('be.visible')
 
 });

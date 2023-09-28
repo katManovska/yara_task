@@ -10,28 +10,31 @@ const bioFieldText = randomUser.randomText();
 When("I login", () => {
     cy.fixture("user").then((user) => {
         signInPage.signInFieldType(user.email)
-        signInPage.passwordField.type(user.password)
+        signInPage.passwordFieldType(user.password)
       });
-    signInPage.singInButton.click();
+    signInPage.singInButtonClick();
 });
 
 When("go to Settings page", () => {
-    userSignedInHomePage.settingsButton.click();
+    userSignedInHomePage.settingsButtonClick();
 });
 
 When("I update user's URL to profile picture", () => {
-    settingsPage.profilePicUrlField.type(urlPicText);
+    settingsPage.profilePicUrlFieldType(urlPicText);
 });
 
 When("I update user's short bio", () => {
-    settingsPage.shortBioField.type(bioFieldText)
+    settingsPage.shortBioFieldType(bioFieldText)
 });
 
 When("I click Update Settings button", () => {
-    settingsPage.updateSettingsButton.click()
+    settingsPage.updateSettingsButtonClick()
+    cy.intercept('PUT', 'https://api.realworld.io/api/user').as('updateSettings')
+    cy.wait('@updateSettings')
 });
 
 Then("I see the new settings are displayed", () => {
-    settingsPage.profilePicUrlField.type(urlPicText).should('be.visible')
-    settingsPage.shortBioField.type(bioFieldText).should('be.visible')
+    userSignedInHomePage.settingsButtonClick();
+    settingsPage.profilePicUrlField.should('have.value', urlPicText)
+    settingsPage.shortBioField.should('have.value', bioFieldText)
 });

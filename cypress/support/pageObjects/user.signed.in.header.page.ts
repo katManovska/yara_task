@@ -1,10 +1,16 @@
+export const selectors = {
+    userProfileButton1: 'a[href="#@',
+    userProfileButton2: '"]',
+    settingsButton: 'a[href="#settings"]',
+};
+
 class UserSignedInHomePage {
-    userProfileButton(userName) {
-        return cy.dataCy('a[href="#@' + userName + '"]');
+    userProfileButton(userName: string) {
+        return cy.dataCy(selectors.userProfileButton1 + userName + selectors.userProfileButton2);
     }
 
-    get settingsButton() {
-        return cy.dataCy('a[href="#settings"]');
+    settingsButtonClick() {
+        return cy.dataCy(selectors.settingsButton).click();
     }  
 }
 

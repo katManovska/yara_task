@@ -1,18 +1,25 @@
+export const selectors = {
+    userNameField: 'input[placeholder="Username"]',
+    emailField: 'input[type="email"]',
+    passwordField: 'input[type="password"]',
+    singInButton: 'button[type="submit"]'
+};
+
 class SignUpPage {
-    get userNameField() {
-        return cy.dataCy('input[placeholder="Username"]');
+    userNameFieldType(userName: string) {
+        return cy.dataCy(selectors.userNameField).type(userName);
     }
 
-    get emailField() {
-        return cy.get('input[type="email"]');
+    emailFieldType(email: string) {
+        return cy.get(selectors.emailField).type(email);
     }
 
-    get passwordField() {
-        return cy.dataCy('input[type="password"]');
+    passwordFieldType(password: string) {
+        return cy.dataCy(selectors.passwordField).type(password);
     }
 
-    get singInButton() {
-        return cy.dataCy('button[type="submit"]');
+    singInButtonClick() {
+        return cy.dataCy(selectors.singInButton).click();
     }
 }
 
